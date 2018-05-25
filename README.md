@@ -34,10 +34,15 @@ In this page users can see default or generate their own corrleation analysis an
 
 History & Statistics
 ---------------------
-History & Statistics page show the market statistics of crypto currencies and plots of close price, market flactuation (high - low) and 100 day moving average both for the pre and post-spike periods. While the default currencies are shown on page load, users can generate statistics and plots of currencies of their choice. See a partial view below:
+History & Statistics page show the market statistics of crypto currencies and interactive plots of close price, market flactuation (high - low) and 100 day moving average both for the pre and post-spike periods. While the default currencies are shown on page load, users can generate statistics and plots of currencies of their choice. See screenshotsbelow:
 
 ![image](https://user-images.githubusercontent.com/25092754/40554120-b620d6c8-6012-11e8-98ba-51b35af9cca0.png)
 
+![image](https://user-images.githubusercontent.com/25092754/40554161-d5470586-6012-11e8-8a85-18a8bb52b529.png)
 
+
+Prediction
+---------------------
+Prediction page shows the predicted price of a user selected currency from two models (ARIMA and LSTM) both in table format and in interactive plots along with their current market price and market information. Below is a partial view of the prediction page:
 
 
