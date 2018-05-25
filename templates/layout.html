@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<!-- Latest compiled and minified CSS -->
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='crypto.css')}}">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- multi-select -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+    <!-- multi-select -->
+
+<title>Data 602</title>
+<style type="text/css">
+.lblassign {
+	text-align: center;
+	font-size:larger;
+	text-decoration:underline;
+}
+
+.lblgrp {
+	text-align: center;
+	font-size:medium;
+	
+}
+
+.div2 {
+    width: 699px;
+    overflow: hidden;    
+}
+p {
+    margin-bottom: 1em;
+}
+input.right {
+    float: right;
+}
+
+.button3 {	background-color: #003300;    		 
+    			border: none;
+    			color: white;
+   				padding: 5px 10px;
+    			text-align: center;
+    			text-decoration: none;
+    			display: inline-block;
+    			font-size: 16px;
+    			margin: 4px 2px;
+    			cursor: pointer;
+    		}
+    		
+ .buttonreset {	background-color:#FF3300;    		 
+    			border: none;
+    			color: white;
+   				padding: 5px 10px;
+    			text-align: center;
+    			text-decoration: none;
+    			display: inline-block;
+    			font-size: 16px;
+    			margin: 4px 2px;
+    			cursor: pointer;
+    		}
+</style>
+ 	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.16.min.css" type="text/css" />        
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.16.min.js"></script>
+	<script type="text/javascript">
+    	Bokeh.set_log_level("info");
+	</script>
+</head>
+
+<body>
+<div align="center">
+	<img alt="Background" height="269" src="../static/coin3A.png" width="700" />
+	<div class="div2"><!--a href="/" class="button3" style="float:right;" role="button">Return to Main</a-->
+	<!--a href="/reset" class="buttonreset" style="float:left;" role="button">Reset Account</a-->
+	</div>
+	 
+	<label class="lblassign"><strong>Final Project</strong></label><br/>
+    <label class="lblgrp">Group: Mehdi Khan, Ann Liu-Ferrara, David 
+    Quarshie</label><br/><br/>	
+  	
+ 	<a href="/" class="button buttonStat" role="button">Main</a>
+    <a href="/corr" class="button buttonPL" role="button">Correlation</a>
+    <a href="/stat_hist" class="button buttonTrade" role="button">History & Statistics</a>
+    <a href="/prediction" class="button" role="button">Prediction</a><br />
+    <label class="lblgrp">Because of the large amount of data-processing, the site my be slow at times 
+   </label><br/><br/><br/><br/>
+
+	
+<div align="center">
+
+	{% block content %}{% endblock %}
+	</div>
+</div>
+
+ 
+</body>
+
+</html>

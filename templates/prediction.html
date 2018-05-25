@@ -1,0 +1,168 @@
+﻿
+
+
+<head>
+     <style type="text/css">
+        .lbl {
+            color: #088B08;
+            font-size: medium;
+        }
+
+        .lblprice {
+            color:#aa4a12;
+            font-size:x-large
+        }
+        .lbl2 {
+            font-size: medium;
+        }
+       .lblmsg {
+            color:#f22f0c;
+            font-size:large;
+        }              
+              
+	   .lblsym  {
+            color: #800000;
+            font-size: large;
+
+        }
+ 
+
+        
+      .auto-style1 {
+		 color: #00008B;
+		 font-size: medium;
+	 }
+	 .auto-style3 {
+		 color: #B7270D;
+		 font-size: medium;
+	 }
+ 
+
+        
+      .auto-style5 {
+		 color: #166625;
+		 font-size: medium;
+	 }
+ 
+
+        
+      .auto-style6 {
+		 color: #800000;
+		 font-size: medium;
+	 }
+	 .auto-style7 {
+		 color: #077474;
+		 font-size: medium;
+	 }
+ 
+
+        
+      </style>
+      
+  </head>
+
+
+        {% extends "layout.html" %} {% block content %}
+
+
+
+        <div align="center"  >
+        	<div style="width:70%">
+        	<span class="auto-style1">Since
+			</span>
+        	<span class="auto-style5">post-spike price
+			</span>
+        	<span class="auto-style1">of cryptocurrencies show some
+			</span>
+        	<span class="auto-style5">consistent patterns,</span><span class="auto-style1"> 
+			it would make more sense to use the
+			</span><span class="lbl2">post-spike prices
+			</span>
+			<span class="auto-style1">in the prediction models. Two models (</span><span class="auto-style3">ARIMA 
+			and LSTM)</span><span class="auto-style1"> were developed for price 
+			prediction. It was found that </span>ARIMA<span class="auto-style1"> 
+			model predicted better than LSTM model in this project's context, 
+			which is also apparent when the predecitions are plotted. <br><br></span>
+			<span class="auto-style7"> 
+			Currencies of USDT (USD) market in Bittrex.com can be entered below 
+			to test the models described above. Once executed the tool provides 
+			the </span><span class="auto-style3"> 
+			current price information</span><span class="auto-style7">, </span><span class="auto-style1"> 
+			predicted price in a table format</span><span class="auto-style7"> 
+			and the </span><span class="auto-style3"> 
+			plots of the past and predicted price.</span><span class="auto-style7"> </span><span class="auto-style1">
+		
+			<br></span>&nbsp;
+		</div> 
+			<form action="/submitPredict" method="POST">
+        <label class="auto-style6" >Enter a currency:&nbsp;</label><input type="text" id="symbol" list="symlist" name="symbol" ><br>
+            <datalist id="symlist" >
+                {% for ticker in tickerlist %}
+                <option value={{ticker}}>
+                    {% endfor %}
+            </datalist>
+          <br>
+         
+            
+
+       
+            <!--a href="/plot" class="button buttonTrade" role="button">View Market Status</a-->
+            <input type="submit" value="View Current Data and Prediction" class="button buttonStat" name="trade" ><br>
+            <label>...it may take some time to predict price...</label><br>            
+
+            <p></p>
+            
+    	 		
+  		
+           <span style="width:800px">
+                    {% if currentSymbol != None %}
+                    <label class="lblmsg" style="font-size:medium;font-weight:bold">{{price}}</label><br><br>
+                        
+                   {% endif %}
+
+                   {% if txtStat2!= None %}
+                    <label class="lblmsg" style="color:darkblue;font-size:medium;font-weight:bold">{{txtStat2}}</label>
+                        
+                   {% endif %}
+
+                   
+             </span>
+		
+         <br><br>
+		<div align="center" > 
+		 {% if predicted != None %}
+                    <label class="lblsym" style="color:green">{{predictprice}}</label>
+                    <label class="lblmsg">{{dockerError}}</label>
+                    {{predicted| safe}}
+                        
+           {% endif %} 
+          
+		</div>
+		<br><br>
+ 		 <div align="center">
+             {% if div != None %}
+   				<label class="lblsym" style="color:navy">{{plottext}}</label><br>
+   				<label class="lblsym" style="color:navy">{{plotins}}</label>
+   				<label class="lblsym" style="color:red;font-size:x-large">{{plotins1}}</label>
+   				<label class="lblsym" style="color:navy;">{{plotins2}}</label><br>
+   				<label class="lblsym" style="color:red;font-size:x-large">{{plotins3}}</label>
+   				<label class="lblsym" style="color:navy;">{{plotins4}}</label><br> 
+   
+                 {{ div|safe }}
+                 {{ script|safe }} 
+              
+              {% endif %}
+ 			</div>            
+            <p></p>                      
+           
+            <div align="center">
+                {% if plot_url != None %}
+                <img src="{{ plot_url }}" id="analysis">
+                {% endif %}
+            </div>
+          </form>
+         </div>
+
+        {% endblock %}
+
+

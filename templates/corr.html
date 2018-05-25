@@ -1,0 +1,131 @@
+﻿
+
+
+<head>
+     <style type="text/css">
+        .lbl {
+            color: #088B08;
+            font-size: medium;
+        }
+
+        .lblprice {
+            color:#aa4a12;
+            font-size:x-large
+        }
+        .lbl2 {
+            font-size: medium;
+        }
+       .lblmsg {
+            color:#f22f0c;
+            font-size:x-large;
+        }              
+              
+	   .lblsym  {
+            color: #800000;
+            font-size: large;
+
+        }
+      .auto-style1 {
+		 color: #B7270D;
+		 font-size: medium;
+	 }
+	 .auto-style2 {
+		 color: #B7270D;
+	 }
+	 .auto-style3 {
+		 color: #F22F0C;
+		 font-size: medium;
+	 }
+      </style>
+     
+    
+
+      
+  </head>
+
+
+        {% extends "layout.html" %} {% block content %}
+
+
+
+        <div align="center"  >
+        <div style="width:70%">
+        <label class='lblsym'><strong>Correlation Analysis with Crypto Price</strong></label><br />
+        	Correlation analysis was performed with the
+			<span class="auto-style2"><strong>six sample currencies </strong>
+			</span>(refer to main page) to see if there are any correlations 
+			among the currency prices. To avoid bias daily return percentage was 
+			used instead of absolute price. The result shows (see the 
+			Correlation plots below) significant differences between pre and 
+			post-spike currencies. The post-spike currencies seem to be strongly 
+			co-related with each other suggesting that <strong>
+			<span class="auto-style2">all currencies reacted to various market 
+			forces in a similar pattern</span> </strong>and there are
+			<span class="auto-style2"><strong>statistically significant 
+			connections</strong></span> in the way their prices fluctuated. In 
+			the other hand the pre-spike currencies do not seem have significant 
+			correlation confirming the lack of similar and connected patterns in 
+			the cryptocurrency markets. <br><br>
+			The darker colors in the below plots 
+			refer to weaker correlation and lighter colors refer to stronger 
+			correlation. The correlation coefficients can be seen by<strong><span class="auto-style1">
+			</span><span class="auto-style3">hovering</span></strong> over the 
+			plots. <br><br>Similar experimentation can be done by generating 
+			correlation plots<strong> by selecting alternative currencies</strong> 
+			from the dropdown menu below:</div><br>  <br />
+       <div>
+            <form action="/submitCorr" method="POST">
+             <select data-placeholder="Select cryptos of your choice ..." multiple class="chosen-select" name="cryptos">
+                <option value=""></option>
+                <option>BTC</option>
+                <option>ETH</option>
+                <option>LTC</option>
+                <option>XRP</option>
+                <option>VTC</option>
+                <option>DASH</option>
+                <option>XLM</option>                
+                <option>CAM</option>
+                <option>XMR</option>   
+            </select>
+                <input type="submit" value="Generate Corr. plots" name="trade" class="button buttonSubmit">
+            </form>
+        </div>
+        
+            
+            
+           
+            <div align="center">
+             {% if div != None %}
+
+                 {{ div|safe }}
+                 {{ script|safe }} 
+              
+              {% endif %}
+ 			</div>
+ 			<br>
+            <p></p>
+              <div align="center">
+                {% if plot_url != None %}
+                <img src="{{ plot_url }}" id="analysis">
+                {% endif %}
+            </div>
+          <!--/form-->
+         </div>
+<script type="text/javascript">
+
+    $(".chosen-select").chosen({
+        no_results_text: "Oops, nothing found!",
+        width: "20%",
+        max_selected_options: 5
+    })
+    .bind("chosen:maxselected", function () {
+        window.alert("You reached your limited number of selections which is 2 selections!");
+    })
+</script>
+
+          
+ 				   
+
+        {% endblock %}
+
+

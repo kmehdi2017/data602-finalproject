@@ -1,0 +1,195 @@
+﻿
+
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+     <style type="text/css">
+        .lbl {
+            color: #088B08;
+            font-size: medium;
+        }
+
+        .lblprice {
+            color:#aa4a12;
+            font-size:x-large
+        }
+        .lbl2 {
+            font-size: medium;
+        }
+       .lblmsg {
+            color:#f22f0c;
+            font-size:x-large;
+        }              
+              
+	   .lblsym  {
+            color: #800000;
+            font-size: large;
+
+        }
+        
+                 
+
+        
+      .auto-style1 {
+		 color: #A5240D;
+	 }
+        
+                 
+
+        
+      .auto-style2 {
+		 color: #793408;
+		 font-size: large;
+	 }
+	 .auto-style3 {
+		 color: #793408;
+	 }
+	 .auto-style4 {
+		 color: #793408;
+		 font-size: medium;
+	 }
+        
+                 
+
+        
+      </style>
+     
+    
+
+      
+  </head>
+
+
+        {% extends "layout.html" %} {% block content %}
+
+        <div align="center"  >
+          <div style="width:60%">
+        	<label class='lblsym'><strong>Historical price, 30 days moving avaerage and price statistics</strong></label><br />
+        		<strong>Two sample coins ('BTC','ETH') were studied to see and compare differences in pre and post-spike periods.
+        		</strong><br>
+        	<label>Please use <span class="auto-style2"><strong>zoom tool </strong>
+				</span>for closer view in the plot area and 
+				<span class="auto-style2"><strong>hover tool</strong></span> for info at a specfic time, 
+				click on the individual items in the legends to
+				<span class="auto-style3"><strong><span class="lbl2">turn </span>
+				</strong></span>plot layers<span class="auto-style4"><strong> On or 
+				Off</strong></span>. </label>
+		</div>
+
+            <table style="width: 80%;">
+                <tr>
+                    <td colspan="2">
+                        <div align="center">
+                            {% if div != None %}
+
+                             {{ div|safe }}
+                             {{ script|safe }} 
+              
+                            {% endif %}
+ 			            </div>
+                    </td>
+                   
+                   
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div align="center" >
+                        <label class='lbl2' style="color:Navy"> As expected the statistics for both coins varies a lot in pre and post spike periods. Also the 30 days moving-average lines in pre-spike period are arbitrary while 
+                            the moving average in post-spike period follow similar patterns, 
+							which suggests influence of similar market forces on both of them in post spike period.</label><br /><br />
+
+                            Simlilar pattens are also apparent in other crypto currencies, which can be experimented by the 
+							<span class="auto-style1"><strong>selecting other correncies</strong></span> from the dropdown below. <br /><br />
+                           <font color="red" style="font-weight:bold">please select one or maximum <br>two (for comparison) currencies at a time.</font>  
+                       
+                        <form action="/submitStat_hist" method="POST">
+                            <select data-placeholder="Select cryptos of your choice ..." multiple class="chosen-select" name="cryptos">
+                             <option value=""></option>
+                            <option>BTC</option>
+                            <option>ETH</option>
+                            <option>LTC</option>
+                            <option>XRP</option>
+                            <option>VTC</option>
+                            <option>DASH</option>   
+                          </select>
+                          <input type="submit" value="View price history/stats" name="trade" class="button buttonSubmit">
+                        </form>
+                    </div>
+                    </td>
+                    
+                 
+                </tr>
+                <tr>
+                    <td>
+                       
+                        <div align="center">
+                            {% if pre_crypto1 != None %}
+                            <label class="lbl2" style="color:green">
+                            {{ pre_crypto1}}
+                            </label>
+                            <br />
+                            {{prestat1| safe}} {% endif %}
+                            <br />
+                            <br />
+                             {% if pre_crypto2 != None %}
+                            <label class="lbl2" style="color:green">
+                            {{ pre_crypto2}}
+                            </label>
+                            <br />
+                            {{prestat2| safe}} {% endif %}
+                            
+                        </div>
+                    </td>
+                    
+                    <td>
+                       
+                        <div align="center">
+                            {% if post_crypto1 != None %}
+                            <label class="lbl2" style="color:green">
+                            {{ post_crypto1}}
+                            </label>
+                            <br />
+                            {{poststat1| safe}} {% endif %}
+                           
+                            <br />
+                            <br />
+                            {% if post_crypto2 != None %}
+                            <label class="lbl2" style="color:green">
+                            {{ post_crypto2}}
+                            </label>
+                            <br />
+                            {{poststat2| safe}} {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+               
+            </div>
+             <p></p>
+            
+            <div align="center">
+                {% if plot_url != None %}
+                <img src="{{ plot_url }}" id="analysis">
+                {% endif %}
+            </div>
+          <!--/form-->
+       
+        
+            
+            
+<script type="text/javascript">
+
+    $(".chosen-select").chosen({
+        no_results_text: "Oops, nothing found!",
+        width: "20%",
+        max_selected_options: 2
+    })
+    .bind("chosen:maxselected", function () {
+        window.alert("Please try with two cryptos at a time!");
+    })
+</script>
+ 				   
+
+        {% endblock %}
+
+

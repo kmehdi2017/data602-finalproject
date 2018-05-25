@@ -1,0 +1,67 @@
+﻿
+<head>
+<style type="text/css">
+.lblmsg {
+            color:#f22f0c;
+            font-size:x-large;
+        }              
+              
+.lblsym {
+            color: #800000;
+            font-size: large;
+
+        }
+ 
+.auto-style4 {
+	font-size: medium;
+}
+.auto-style5 {
+	color: #793408;
+}
+.auto-style7 {
+	color: #F22F0C;
+}
+ 
+.auto-style8 {
+	color: #901F0B;
+	font-size: large;
+}
+ 
+</style>
+</head>
+
+{% extends "layout.html" %}
+
+{% block content %}
+  
+  
+	
+	<div align="center">
+	<div style="width:75%">
+	<label class="lblmsg">{{msg}}</label><br><br>
+	   
+	    T<span class="auto-style4">his study takes a look at 
+		<span class="auto-style5"><strong>cryptocurrency pricing</strong></span> - presented on a 
+		<span class="auto-style5">python/flask-based application</span> where information can be accessed through various visualizations, data and charts. Cryptocurrencies are exchanged online using Blockchain technology, allowing peer to peer trading with users receiving their funds as fast as 2 hours. GDAX (gdax.com), coinmarket.com, cryptocompare.com, and other various exchanges currently allow users to buy and sell these currencies. In addition to their own platforms all these websites grant access to their APIs with varying capacities, which can be used for insights into different trades at different times.
+
+		<br><br>This project used APIs from cryptocompare.com and bittrex.com along with the data analysis, statistical and ML tools of Python. The web application and visualizations were done with Bokeh, jQuery, and the Flask library in Python.
+
+		<br><br></span><span class="auto-style8"><strong>The scope, limitations and assumptions:
+		</strong></span><strong><br class="auto-style8"></strong><span class="auto-style4">The project study was limited to six cryptocurrencies: BTC, ETH, LTC, XRP, VTC, and DASH (although the flexibility of the procedures and developed tools allow any cryptocurrency to be studied if needed). These six cryptos were selected based on their popularity, market volume and availability of historical data for longer periods. The historical data was collected from cryptocompare.com through their API. Crytocompare.com was selected since it collects information from several exchanges and was assumed to provide a better insight of a currency's trading information and market status. Bittrex API was used to get the currency list.
+
+		<br><br>The cryptocurrency market experienced an abrupt spike in around mid-2017, which attracted many but also concerned others about their existence, potentials and risks. Since these two 
+		<span class="auto-style7"><strong>periods are very distinct</strong></span>, all the studies were done in the context of 
+		<span class="auto-style7"><strong>pre-spike and post-spike</strong></span> time periods of cryptocurrency. The project studied two years of historical data and time 
+		<span class="auto-style7"><strong>after April 1, 2017 </strong></span>was considered post-spike period.
+		
+        </span>
+        </span>
+      </div>
+ <p></p>
+ <br><br>
+		<img alt="logo" src="{{ url_for('static', filename = 'coinlogo.png') }}">
+	</div>
+ 
+
+{% endblock %}
+
