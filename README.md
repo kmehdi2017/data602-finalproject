@@ -30,5 +30,13 @@ Correlation
 ------------
 In this page users can see default or generate their own corrleation analysis and plots. By having correlation plots side by side users can compare and see if the currencies reacted to market forces in the same way in pre and post-spike periods. It was found in the study that the currencies were more strongly correlated in the post-spike period. Following is a partial view of the correlation page:
 
+![image](https://user-images.githubusercontent.com/25092754/40553789-b789a70c-6011-11e8-9cad-d8d9e0a9ab24.png)
+
+History & Statistics
+---------------------
+History & Statistics page show the market statistics of crypto currencies and plots of close price, market flactuation (high - low) and 100 day moving average both for the pre and post-spike periods. While the default currencies are shown on page load, users can generate statistics and plots of currencies of their choice. See a partial view below:
+
+
+
 
 
