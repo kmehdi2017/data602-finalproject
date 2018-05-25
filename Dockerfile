@@ -8,4 +8,4 @@ WORKDIR ./
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
-CMD [ "python", "khan_finalproject.py" ]
+CMD [ "python", "finalproject.py" ]
