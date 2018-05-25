@@ -46,8 +46,8 @@ def show_main_page():
 
 @app.route("/corr")
 def show_corelation():
-    currencies = ['BTC','ETH','LTC','XRP','VTC','DASH']        
-    p = create_corrDF(currencies)
+    cocurrencies = ['BTC','ETH','LTC','XRP','VTC','DASH']        
+    p = create_corrDF(cocurrencies)
     script, div = components(p)
     plot_url="/static/coinlogo.png"
     return render_template("corr.html", script=script, div=div,  plot_url=plot_url)
@@ -430,23 +430,6 @@ def get_ts(df):
 # The following functions were created to analize and visualize the data, the trend, and check stationarity, ways of finding and eliminating trends
 # and finally find the right model (in this case ARIMA)
 
-# plotting the data for a visual interpretation:
-# ts_plots takes a cruptocurrency dataset (dataframe) as its parameter and create a histogram and line plot in respect to time  
-# of the 'close' price of the currency. In this context both selected currencies clearly shows a trend over time.
-
-def ts_plots(historyDF):
-    historyDF.plot(historyDF.index,'close')
-    
-    bns = int(historyDF.shape[0]/15)
-    lowest =  min(historyDF['close'].astype(int));
-    highest =  max(historyDF['close'].astype(int))
-    #breaks = np.linspace(lowest, highest, num=bns+1)
-    data = historyDF['close'].astype(int)
-    matplotlib.pyplot.hist(data, bins=bns, range=(lowest,highest))
-    
-    
-     
-      
       
 # After checking several process it was decided that data will be log transformed so the difference between higher and lower values are atjusted, then differencing 
 # will be used to smooth the data, a 15 days (two weeks) lag was used. The  transformation_differencing functiobn take timeseried data
