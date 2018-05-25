@@ -69,6 +69,12 @@ input.right {
     			margin: 4px 2px;
     			cursor: pointer;
     		}
+.auto-style1 {
+	color: #FF3300;
+}
+.auto-style2 {
+	color: #A53519;
+}
 </style>
  	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.16.min.css" type="text/css" />        
 	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.16.min.js"></script>
@@ -93,14 +99,22 @@ input.right {
     <a href="/stat_hist" class="button buttonTrade" role="button">History & Statistics</a>
     <a href="/prediction" class="button" role="button">Prediction</a><br />
     <label class="lblgrp">Because of the large amount of data-processing, the site my be slow at times 
+    <br />
+    
+	<span style="width:50%" class="auto-style1"><strong>Note: </strong> </span> 
+	
+	<span style="width:50%" class="auto-style2">The project depends on 
+	cryptocomapre.com. The tools might fail if the cryptocompare API fails to 
+	provide data.<br> The cryptocompare API failed during the test and because of 
+	the time limitation this problem was not addressed in the codes. </span> 
+	
    </label><br/><br/><br/><br/>
 
-	
+</diV>	
 <div align="center">
 
 	{% block content %}{% endblock %}
 	</div>
-</div>
 
  
 </body>
