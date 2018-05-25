@@ -23,3 +23,12 @@ The cryptocurrency market experienced an abrupt spike in around mid-2017, which 
 Initial screen:
 ---------------
 At the start of the program the user is greeted with a welcome screen with the project information. it displays buttons with link to specific functionalities of the application. These buttons are common in all the pages that help users to navigate to any specfic page or functionality from any other page. Clicking the “Correlation” button takes a user to the correlation analysis page(corr.html), similarly “History & Statistics” and “Prediction” takes a user to their respective pages to see and compare historical data, statistics and predicted currency price.The "Main" takes users back to the main initial page. Followig image shows part of the initial view:
+
+![image](https://user-images.githubusercontent.com/25092754/40553373-70c8ba3e-6010-11e8-8e0d-5ca96cfbf362.png)
+
+Correlation
+------------
+In this page users can see default or generate their own corrleation analysis and plots. By having correlation plots side by side users can compare and see if the currencies reacted to market forces in the same way in pre and post-spike periods. It was found in the study that the currencies were more strongly correlated in the post-spike period. Following is a partial view of the correlation page:
+
+
+
