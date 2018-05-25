@@ -1,6 +1,6 @@
 # data602-Final Project
 # NOTE:
-The project depends on cryptocomapre.com. The tools might fail if the cryptocompare API fails to provide data. 
+The project depends on cryptocomapre.com. The tools might fail if the cryptocompare API fails to provide data. The cryptocompare API failed during the test and because of the time limitation this problem was not addressed in the codes. 
 
 Accessing Docker Image from Docker Hub:
 ---------------------------------------
