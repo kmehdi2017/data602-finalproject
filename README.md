@@ -1,4 +1,6 @@
 # data602-Final Project
+# NOTE:
+The project depends on cryptocomapre.com. The tools might fail if the cryptocompare API fails to provide data. 
 
 Accessing Docker Image from Docker Hub:
 ---------------------------------------
