@@ -1,4 +1,4 @@
-# data602-finalproject
+# data602-Final Project
 
 Accessing Docker Image from Docker Hub:
 ---------------------------------------
