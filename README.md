@@ -36,6 +36,7 @@ History & Statistics
 ---------------------
 History & Statistics page show the market statistics of crypto currencies and plots of close price, market flactuation (high - low) and 100 day moving average both for the pre and post-spike periods. While the default currencies are shown on page load, users can generate statistics and plots of currencies of their choice. See a partial view below:
 
+![image](https://user-images.githubusercontent.com/25092754/40554120-b620d6c8-6012-11e8-98ba-51b35af9cca0.png)
 
 
 
