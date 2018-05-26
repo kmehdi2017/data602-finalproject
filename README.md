@@ -4,6 +4,7 @@ The project depends on cryptocomapre.com. The tools might fail if the cryptocomp
 
 Accessing Docker Image from Docker Hub:
 ---------------------------------------
+    docker pull kmehdi2017/data602:finalproject
 
 Group:
 ---------------------------------------
